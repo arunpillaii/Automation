@@ -43,7 +43,7 @@ def ar_autoRig(loadEvent = 0):
 	mc.columnLayout('maincolmlay')
 	userName=os.getenv('USERNAME')
 	imageFolder= os.path.dirname(RA.__file__)
-	mc.image(image=(imageFolder +'/Icons/BanerNew.jpg'),h = 75 )
+	mc.image(image=(imageFolder +'/icons/BanerNew.jpg'),h = 75 )
 	mc.separator(style = 'none' , h = 10)
 	mc.rowColumnLayout(nc = 2 , cw = ([1 , 150], [2 ,250]))
 	mc.text(l = 'Character Name  :> ' , al = 'center' , fn = 'boldLabelFont' )
@@ -232,9 +232,9 @@ def ar_autoRig(loadEvent = 0):
 #	mc.tabLayout( mainTabLay, edit=True, tabLabel=((GeneralFL , ' Skeleton '),(ToolsFL , ' Xtra Tools ')), sti = 1 )
 	mc.tabLayout( mainTabLay, edit=True, tabLabel=(GeneralFL , ' Skeleton '))
 	mc.showWindow('winAutoRig')
-	if mc.dockControl('autoDock',exists=1):
-		mc.deleteUI('autoDock')
-	mc.dockControl('autoDock',a='right',label='Auto-Rigging Tool',content='winAutoRig',allowedArea= "all")
+	# if mc.dockControl('autoDock',exists=1):
+	# 	mc.deleteUI('autoDock')
+	# mc.dockControl('autoDock',a='right',label='Auto-Rigging Tool',content='winAutoRig',allowedArea= "all")
 # Button Commands	
 def ar_btnCmds(callProc):
 	
@@ -342,10 +342,10 @@ def ar_btnCmds(callProc):
 		SD.ar_setDefault(ctrls)
  	
  		#Set Expresion for Dag Menu
- 		exp = mc.expression(n = 'dagSource', s='source dagMenuProc2012.mel;' )
+ 		# exp = mc.expression(n = 'dagSource', s='source dagMenuProc2012.mel;' )
  		#exp = mc.expression(n = 'dagSource', s='if (getApplicationVersionAsFloat() == 2008)\n{\nsource dagMenuProc2008.mel;\n}\nif (getApplicationVersionAsFloat() == 2009)\n{\nsource dagMenuProc2009.mel;\n}' )
  		#exp = mc.expression(n = 'dagSource', s='source dagMenuProc2008.mel;' )
- 		mc.lockNode(exp, l = True)
+ 		# mc.lockNode(exp, l = True)
  		
  		mc.select(cl = True)
 

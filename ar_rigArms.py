@@ -15,7 +15,7 @@ import re
 from ar_SDK import *
 
 #def ar_rigArms(clavJnt = 'LeftClavicle_CJ' , side = 'Left',bendOnOff=1):
-def ar_rigArms(clavJnt , side , bendOnOff , bendJnts,chrScale=1):
+def ar_rigArms(clavJnt, side, bendOnOff, bendJnts, chrScale=1):
 
 	mainprogressbar = mm.eval("global string $gMainProgressBar;string $tmp=$gMainProgressBar")
 	mc.progressBar(mainprogressbar,edit=True,bp=True,isInterruptable=True,status=('Rigging %s Arms' % side))
@@ -68,8 +68,28 @@ def ar_rigArms(clavJnt , side , bendOnOff , bendJnts,chrScale=1):
 		mainGrp = mc.group(em = True,n = "Grp_Arms")
 	
 	#Control Creation
-	armCtrlsDic = {'clavicle':("Ctrl_%sClavicle" % side),'shoulderFK':("Ctrl_%sShoulderFK" % side),'elbowFK':("Ctrl_%sElbowFK" % side),'wristFK':("Ctrl_%sWristFK" % side),'elbowPole':("Ctrl_%sElbowPole" % side),'arm':("Ctrl_%sArm" % side),'ArmIKFK' :("Ctrl_%sArmIKFK" % side),'gimbal':("Ctrl_%sHandGimbal" % side),'hand':("Ctrl_%sHand" % side)}
-	armCtrlsGrpDic = {'clavicleGrp':("Grp_%sClavicle" % side),'shoulderFKGrp':("Grp_%sShoulderFK" % side),'elbowFKGrp':("Grp_%sElbowFK" % side),'wristFKGrp':("Grp_%sWristFK" % side),'elbowPoleGrp':("Grp_%sElbowPole" % side),'armGrp':("Grp_%sArm" % side),'ArmIKFKGrp' :("Grp_%sArmIKFK" % side),'gimbalGrp':("Grp_%sHandGimbal" % side),'handGrp':("Grp_%sHand" % side)}
+	armCtrlsDic = {
+		'clavicle':("Ctrl_%sClavicle" % side),
+		'shoulderFK':("Ctrl_%sShoulderFK" % side),
+		'elbowFK':("Ctrl_%sElbowFK" % side),
+		'wristFK':("Ctrl_%sWristFK" % side),
+		'elbowPole':("Ctrl_%sElbowPole" % side),
+		'arm':("Ctrl_%sArm" % side),
+		'ArmIKFK' :("Ctrl_%sArmIKFK" % side),
+		'gimbal':("Ctrl_%sHandGimbal" % side),
+		'hand':("Ctrl_%sHand" % side)
+	}
+	armCtrlsGrpDic = {
+		'clavicleGrp':("Grp_%sClavicle" % side),
+		'shoulderFKGrp':("Grp_%sShoulderFK" % side),
+		'elbowFKGrp':("Grp_%sElbowFK" % side),
+		'wristFKGrp':("Grp_%sWristFK" % side),
+		'elbowPoleGrp':("Grp_%sElbowPole" % side),
+		'armGrp':("Grp_%sArm" % side),
+		'ArmIKFKGrp' :("Grp_%sArmIKFK" % side),
+		'gimbalGrp':("Grp_%sHandGimbal" % side),
+		'handGrp':("Grp_%sHand" % side)
+	}
 
 	inst = scc.Ctrlcurve(armCtrlsDic['clavicle'], (.05*chrScale))
 	inst.box()

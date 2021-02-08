@@ -19,7 +19,7 @@ def createCtrl(obj,name,grpBol,rotBol,scaleVal):
 		mc.setAttr(trans+'.rotateOrder',k=1,cb=1)
 	
 	if grpBol:
-		grpName='Grp_' + name
+    		grpName='Grp_' + name
 		splName=name.split('_')
 		if len(splName) > 1:
 			grpName='Grp_'+ splName[1]
